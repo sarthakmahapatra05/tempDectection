@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ByteSweep</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <button class="mode-toggle" id="modeToggle">🌙 Dark Mode</button>
+
+  <header>
+    <h1>✨ ByteSweep</h1>
+    <p>Smart tools to keep your device clean & optimized</p>
+  </header>
+
+  <main class="feature-grid">
+    <a href="temp.html" class="card">🧹 Detect Temporary Files</a>
+    <a href="large.html" class="card">🧱 Find Large Files</a>
+    <a href="health.html" class="card">💻 System Health Panel</a>
+    <a href="query.html" class="card">❓ Have a Question?</a>
+  </main>
+
+  <section class="info-section">
+    <h2>Why Should You Care About File Clutter?</h2>
+
+    <div class="info-box">
+      <h3>🧹 Temporary Files</h3>
+      <p>Temporary files build up and take up space. Removing them improves speed and frees your system from hidden bloat.</p>
+      <blockquote>“A clean drive is a fast drive.”</blockquote>
+    </div>
+
+    <div class="info-box">
+      <h3>🧱 Large Files</h3>
+      <p>Large files can fill your disk quickly. Identifying and organizing them helps keep your device snappy and responsive.</p>
+      <blockquote>“Digital minimalism isn’t about less — it’s about space for more of what matters.”</blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ByteSweep. Made for digital peace of mind.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('modeToggle');
+    const body = document.body;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleBtn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>ByteSweep</h3>
+      <p>Smart tools for a cleaner digital world.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><a href="mailto:bytesweep@gmail.com">📧 bytesweep@gmail.com</a></li>
+        <li><a href="https://www.instagram.com" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://x.com" target="_blank">🐦 Twitter (X)</a></li>
+        <li><a href="#">📍 Support & Help</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 ByteSweep. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

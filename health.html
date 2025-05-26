@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>System Health – ByteSweep</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=JetBrains+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <button class="mode-toggle" id="modeToggle">🌙 Dark Mode</button>
+
+  <header>
+    <h1>💻 System Health Panel</h1>
+    <p>Monitor key system vitals to stay ahead of issues</p>
+  </header>
+
+  <main class="scanner-page">
+    <h2>System Overview</h2>
+
+    <div class="info-box">
+      <h3>🧠 RAM Usage</h3>
+      <p><strong>Used:</strong> 6.2 GB / 16 GB</p>
+      <div class="bar"><div class="fill" style="width: 38%"></div></div>
+    </div>
+
+    <div class="info-box">
+      <h3>💾 Disk Usage</h3>
+      <p><strong>Used:</strong> 120 GB / 512 GB</p>
+      <div class="bar"><div class="fill" style="width: 23%"></div></div>
+    </div>
+
+    <div class="info-box">
+      <h3>🔥 CPU Load</h3>
+      <p><strong>Load:</strong> 23%</p>
+      <div class="bar"><div class="fill" style="width: 23%"></div></div>
+    </div>
+
+    <p style="text-align: center; margin-top: 30px;">
+      <a href="index.html" style="color: #6366f1;">← Back to Home</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ByteSweep. Monitor. Clean. Optimize.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('modeToggle');
+    const body = document.body;
+
+    // Load saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        toggleBtn.textContent = '☀️ Light Mode';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        toggleBtn.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>ByteSweep</h3>
+      <p>Smart tools for a cleaner digital world.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><a href="mailto:bytesweep@gmail.com">📧 bytesweep@gmail.com</a></li>
+        <li><a href="https://www.instagram.com" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://x.com" target="_blank">🐦 Twitter (X)</a></li>
+        <li><a href="#">📍 Support & Help</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 ByteSweep. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
